@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>我的星系之旅</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <div class="page-wrapper">
+  <section id="hero" class="section">
+    <canvas id="meteor-canvas" aria-hidden="true"></canvas>
+    <h1 class="pixel-title">欢迎来到我的星际旅程</h1>
+    <div class="hero-content">
+      <div class="pixel-frame floating">
+        <div class="frame-inner">
+          <img src="imgs/3.svg" alt="我的头像" class="avatar" id="avatar-img">
+        </div>
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+      </div>
+      <div class="assistant-wrap">
+        <div class="pixel-assistant floating-slow">
+          <svg viewBox="0 0 32 40" class="assistant-svg" aria-hidden="true">
+            <rect x="10" y="4" width="12" height="4" fill="#88ccff"></rect>
+            <rect x="8" y="8" width="16" height="8" fill="#aaccff"></rect>
+            <rect x="10" y="10" width="3" height="3" fill="#0a0a2e"></rect>
+            <rect x="19" y="10" width="3" height="3" fill="#0a0a2e"></rect>
+            <rect x="12" y="15" width="8" height="2" fill="#ff88aa"></rect>
+            <rect x="6" y="16" width="6" height="10" fill="#6677cc"></rect>
+            <rect x="20" y="16" width="6" height="10" fill="#6677cc"></rect>
+            <rect x="10" y="16" width="12" height="14" fill="#8899dd"></rect>
+            <rect x="8" y="30" width="6" height="6" fill="#4455aa"></rect>
+            <rect x="18" y="30" width="6" height="6" fill="#4455aa"></rect>
+            <rect x="4" y="18" width="4" height="4" fill="#aaccff"></rect>
+            <rect x="24" y="18" width="4" height="4" fill="#aaccff"></rect>
+          </svg>
+        </div>
+        <div class="speech-bubble pixel-bubble">
+          <span>探索我的星际旅程吧！✨</span>
+          <div class="bubble-tail"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">▼ 向下探索 ▼</div>
+  </section>
+
+  <section id="portfolio" class="section">
+    <h2 class="section-title">银河碎片</h2>
+    <div class="galaxy-container" id="galaxy-container">
+      <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
+      <div class="galaxy-core"></div>
+      <div class="galaxy-orbits" id="galaxy-orbits"></div>
+    </div>
+
+    <div id="hidden-images" style="display:none"></div>
+
+    <div class="galaxy-modal" id="galaxy-modal">
+      <canvas id="modal-star-canvas" aria-hidden="true"></canvas>
+      <div class="galaxy-modal-bg"></div>
+      <div class="floating-images-container" id="floating-images-container"></div>
+      <button class="galaxy-modal-close" id="modal-close">✕</button>
+      <span class="modal-label" id="modal-label">星迹 01</span>
+    </div>
+  </section>
+
+  <section id="milky-way" class="section">
+    <div class="milky-way-band">
+      <canvas id="milky-canvas" aria-hidden="true"></canvas>
+      <div class="milky-stars"></div>
+    </div>
+    <p class="milky-text">穿越银河，连接星辰...</p>
+  </section>
+
+  <section id="footer" class="section">
+    <div class="social-links">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-icon" title="Instagram">
+        <svg viewBox="0 0 24 24" width="48" height="48">
+          <rect x="2" y="2" width="20" height="20" fill="currentColor" rx="4"></rect>
+          <rect x="7" y="7" width="10" height="10" fill="#0a0a2e" rx="3"></rect>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="#0a0a2e"></circle>
+        </svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener" class="social-icon" title="Rednote">
+        <svg viewBox="0 0 24 24" width="48" height="48">
+          <rect x="4" y="4" width="16" height="16" fill="currentColor" rx="4"></rect>
+          <rect x="8" y="8" width="8" height="8" fill="#0a0a2e" rx="2"></rect>
+          <circle cx="12" cy="12" r="2" fill="#0a0a2e"></circle>
+        </svg>
+        <span>Rednote</span>
+      </a>
+      <a href="https://www.douyin.com/" target="_blank" rel="noopener" class="social-icon" title="Douyin">
+        <svg viewBox="0 0 24 24" width="48" height="48">
+          <rect x="4" y="2" width="16" height="20" fill="currentColor" rx="3"></rect>
+          <rect x="8" y="8" width="8" height="8" fill="#0a0a2e"></rect>
+          <rect x="9" y="8" width="3" height="3" fill="currentColor"></rect>
+        </svg>
+        <span>Douyin</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>© 2026 我的星系 · 用像素点亮宇宙</p>
+      <a href="edit.html" class="edit-link">编辑我的星系</a>
+    </footer>
+  </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

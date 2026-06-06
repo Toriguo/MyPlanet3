@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>编辑我的星系</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="edit.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <div class="edit-container">
+    <h1 class="edit-title">编辑我的星系</h1>
+
+    <!-- 头像上传 -->
+    <section class="edit-section">
+      <h2 class="section-label">头像</h2>
+      <div class="upload-area" id="avatar-area">
+        <img id="avatar-preview" src="imgs/3.svg" alt="头像预览">
+        <label class="upload-btn" for="avatar-input">选择图片</label>
+        <input type="file" id="avatar-input" accept="image/*" hidden>
+      </div>
+    </section>
+
+    <!-- 作品图片上传 - 动态星球，每颗支持多张图片 -->
+    <section class="edit-section">
+      <h2 class="section-label">星迹图片</h2>
+      <p class="section-hint">点击"+"添加星球，点击星球名称可修改，点击"+"添加图片</p>
+      <div class="planet-upload-grid" id="planet-upload-grid">
+        <!-- 动态生成 -->
+      </div>
+      <button class="add-planet-btn" id="add-planet-btn" type="button">+ 添加星球</button>
+    </section>
+
+    <!-- 社交链接 -->
+    <section class="edit-section">
+      <h2 class="section-label">社交链接</h2>
+      <div class="social-form">
+        <div class="social-field">
+          <label>Instagram</label>
+          <input type="text" id="ig-link" placeholder="https://www.instagram.com/你的账号">
+        </div>
+        <div class="social-field">
+          <label>Rednote</label>
+          <input type="text" id="xhs-link" placeholder="https://www.xiaohongshu.com/你的账号">
+        </div>
+        <div class="social-field">
+          <label>Douyin</label>
+          <input type="text" id="dy-link" placeholder="https://www.douyin.com/你的账号">
+        </div>
+      </div>
+    </section>
+
+    <!-- 保存按钮 -->
+    <div class="edit-actions">
+      <button class="save-btn" id="save-btn">保存并预览</button>
+      <a href="index.html" class="preview-btn" target="_blank">查看分享页面</a>
+    </div>
+
+    <div class="save-status" id="save-status"></div>
+  </div>
+
+  <!-- 图片预览弹窗 -->
+  <div class="image-preview-modal" id="image-preview-modal">
+    <div class="preview-modal-bg"></div>
+    <div class="preview-modal-content">
+      <button class="preview-close-btn" id="preview-close-btn">✕</button>
+      <img id="preview-image" src="" alt="预览">
+      <button class="preview-delete-btn" id="preview-delete-btn">删除图片</button>
+    </div>
+  </div>
+
+  <!-- 隐藏的文件输入 -->
+  <input type="file" id="hidden-file-input" accept="image/*" multiple hidden>
+
+  <script src="edit.js"></script>
+</body>
+</html>
